@@ -18,6 +18,16 @@
             top: 20px;
             right: 25px;
         }
+        
+        .this-col {
+            background-color: gray;
+            border: 1px solid white;
+            padding: 5px;
+        }
+        
+        .highlight {
+            background-color: white;
+        }
     </style>
 </head>
 
@@ -167,6 +177,31 @@
     </div>
 
 
+    <!-- Test -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m4 this-col">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate odit possimus veniam eos ratione reprehenderit doloribus voluptatibus quibusdam nostrum, velit id labore, nesciunt, totam aliquam! Iste debitis molestias veniam labore.
+            </div>
+            <div class="col s12 m4 this-col">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate odit possimus veniam eos ratione reprehenderit doloribus voluptatibus quibusdam nostrum, velit id labore, nesciunt, totam aliquam! Iste debitis molestias veniam labore.
+            </div>
+            <div class="col s12 m4 this-col">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate odit possimus veniam eos ratione reprehenderit doloribus voluptatibus quibusdam nostrum, velit id labore, nesciunt, totam aliquam! Iste debitis molestias veniam labore.
+            </div>
+            <div class="col s12 m4 this-col">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate odit possimus veniam eos ratione reprehenderit doloribus voluptatibus quibusdam nostrum, velit id labore, nesciunt, totam aliquam! Iste debitis molestias veniam labore.
+            </div>
+            <div class="col s12 m4 this-col">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate odit possimus veniam eos ratione reprehenderit doloribus voluptatibus quibusdam nostrum, velit id labore, nesciunt, totam aliquam! Iste debitis molestias veniam labore.
+            </div>
+            <div class="col s12 m4 this-col">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate odit possimus veniam eos ratione reprehenderit doloribus voluptatibus quibusdam nostrum, velit id labore, nesciunt, totam aliquam! Iste debitis molestias veniam labore.
+            </div>
+        </div>
+    </div>
+
     <!-- The jQuery file path -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <!-- Path of the materialize.min.js file -->
@@ -182,6 +217,37 @@
 
             // Fixed Action Button Trigger
             $('.fixed-action-btn').floatingActionButton();
+
+            //White Background on mouseover
+            //With jQuery
+            /* $('.this-col').mouseover(function(e) {
+                e.preventDefault();
+                $(this).css('background-color', 'white');
+            });
+            $('.this-col').mouseleave(function(e) {
+                e.preventDefault();
+                $(this).css('background-color', 'grey');
+            }); */
+
+            //With Vanilla JS
+
+            let this_col = document.querySelectorAll('.this-col');
+
+            this_col.forEach(col => {
+                col.addEventListener('mouseover', function() {
+                    col.classList.add('highlight')
+                });
+            });
+
+            this_col.forEach(col => {
+                col.addEventListener('mouseleave', function() {
+                    col.classList.remove('highlight')
+                });
+            });
+
+
+
+
 
         });
     </script>
